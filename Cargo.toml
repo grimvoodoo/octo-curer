@@ -2,6 +2,10 @@
 name = "uv-resin-curing"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["acleveland"]
+description = "Embassy-based UV resin curing timer for Raspberry Pi Pico"
+repository = "https://github.com/acleveland/uv-resin-curing"
 
 [profile.release]
 debug = 2  # Enable full debug info for RTT logging
