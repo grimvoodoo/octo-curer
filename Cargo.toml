@@ -1,0 +1,17 @@
+[package]
+name = "uv-resin-curing"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+debug = 2  # Enable full debug info for RTT logging
+
+[dependencies]
+embassy-executor = { version = "0.5", features = ["arch-cortex-m", "executor-thread", "integrated-timers"] }
+embassy-time = { version = "0.3", features = ["defmt", "defmt-timestamp-uptime"] }
+embassy-rp = { version = "0.1", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"] }
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+cortex-m = "0.7.6"
+cortex-m-rt = "0.7.0"

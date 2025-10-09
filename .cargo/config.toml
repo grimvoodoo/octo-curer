@@ -1,0 +1,16 @@
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+runner = "probe-rs run --chip RP2040"
+rustflags = [
+  "-C", "linker=flip-link",
+  "-C", "link-arg=--nmagic",
+  "-C", "link-arg=-Tlink.x",
+  "-C", "link-arg=-Tdefmt.x",
+]
+
+# Alternative UF2 workflow (when probe-rs doesn't work):
+# 1. cargo build --release
+# 2. elf2uf2-rs target/thumbv6m-none-eabi/release/uv-resin-curing firmware.uf2
+# 3. Copy firmware.uf2 to Pico in BOOTSEL mode
